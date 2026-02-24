@@ -73,7 +73,37 @@ Or install manually with pip:
 pip install pocketpaw
 pocketpaw
 ```
+---
 
+## Windows CLI Troubleshooting
+
+If you installed PocketPaw using:
+
+    pip install .
+
+and the `pocketpaw` command is not recognized:
+
+    'pocketpaw' is not recognized as an internal or external command
+
+This usually means your Python Scripts directory is not added to PATH.
+
+By default, it is located at:
+
+    C:\Users\<your-username>\AppData\Local\Python\Python3.XX\Scripts
+
+### How to Fix
+
+1. Open Start → Search "Environment Variables"
+2. Click "Edit the system environment variables"
+3. Click "Environment Variables"
+4. Under User variables → Select `Path` → Click Edit
+5. Add the Scripts directory path
+6. Restart your terminal
+
+Alternatively, you can run PocketPaw using:
+
+    python -m pocketpaw
+    
 > **Note:** Some features (browser automation, shell tools) work best under WSL2. Native Windows support covers the web dashboard and all LLM chat features.
 
 </details>
