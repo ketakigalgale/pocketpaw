@@ -75,21 +75,37 @@ pocketpaw
 ```
 ---
 
+    
+> **Note:** Some features (browser automation, shell tools) work best under WSL2. Native Windows support covers the web dashboard and all LLM chat features.
+
+</details>
 ## Windows CLI Troubleshooting
 
 If you installed PocketPaw using:
 
-    pip install .
+```powershell
+pip install pocketpaw
+```
 
 and the `pocketpaw` command is not recognized:
 
-    'pocketpaw' is not recognized as an internal or external command
+```text
+'pocketpaw' is not recognized as an internal or external command
+```
 
 This usually means your Python Scripts directory is not added to PATH.
 
 By default, it is located at:
 
-    C:\Users\<your-username>\AppData\Local\Python\Python3.XX\Scripts
+```text
+C:\Users\<your-username>\AppData\Local\Python\Python3.XX\Scripts
+```
+
+You can find your exact Scripts path by running:
+
+```powershell
+python -c "import sysconfig; print(sysconfig.get_path('scripts'))"
+```
 
 ### How to Fix
 
@@ -102,11 +118,9 @@ By default, it is located at:
 
 Alternatively, you can run PocketPaw using:
 
-    python -m pocketpaw
-    
-> **Note:** Some features (browser automation, shell tools) work best under WSL2. Native Windows support covers the web dashboard and all LLM chat features.
-
-</details>
+```powershell
+python -m pocketpaw
+```
 
 <details>
 <summary>Other methods</summary>
