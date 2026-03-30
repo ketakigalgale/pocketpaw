@@ -242,7 +242,33 @@ If the dashboard shows **UNHEALTHY** on first run, PocketPaw is usually installe
 Prefer a free local option? Use Ollama instead (see [Features](#features) and [Configuration](#configuration)).
 
 ---
+## 🔐 Authentication Behavior (Localhost vs LAN Access)
 
+When running PocketPaw locally, authentication behavior differs based on how the application is accessed:
+
+### Localhost Access
+Accessing via:
+http://localhost:8888
+
+- Authentication is **not required**
+- Localhost is treated as a **trusted environment**
+- Designed for ease of local development
+
+### LAN Access
+Accessing via:
+http://<your-local-ip>:8888
+
+- Requires an **access token**
+- Unauthorized requests may return **401 Unauthorized**
+- Ensures secure access over the network
+
+### Why This Difference Exists
+
+This is an intentional security design:
+- Prevents unauthorized access from other devices on the network
+- Keeps local development simple and frictionless
+
+> ⚠️ If you are unable to access from another device, ensure you are using a valid access token.
 ## Features
 
 | | |
